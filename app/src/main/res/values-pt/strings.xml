@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vídeos Populares</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="pref_sort_popular_most">Mais populares</string>
+    <string name="pref_sort_preference_label">Preferência de exibição</string>
+    <string name="pref_sort_rated_highest">Melhores rankeados</string>
+    <string name="title_activity_settings">Ajustes</string>
+    <string name="hello_world">Oi Mundo!!!</string>
+</resources>

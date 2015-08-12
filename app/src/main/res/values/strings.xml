@@ -3,4 +3,20 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+
+
+    <string name="title_activity_settings">Settings</string>
+    <!-- Label for the sort preference [CHAR LIMIT=30] -->
+    <string name="pref_sort_label">Sort preference</string>
+    <!-- Label for most popular sort preference [CHAR LIMIT=25] -->
+    <string name="pref_sort_label_popular_most">Most Popular</string>
+    <!-- Label for highest rated sort preference [CHAR LIMIT=25] -->
+    <string name="pref_sort_label_rated_highest">Highest rated</string>
+    <!-- Key name for sorting method preference in SharedPreferences [CHAR LIMIT=NONE] -->
+    <string name="pref_sort_key" translatable="false">sortPreference</string>
+    <!-- Value in SharedPreferences for most popular sorting option [CHAR LIMIT=NONE] -->
+    <string name="pref_sort_popular_most" translatable="false">popularmost</string>
+    <!-- Value in SharedPreferences for highest rated sorting option [CHAR LIMIT=NONE] -->
+    <string name="pref_sort_rated_highest" translatable="false">ratedhighest</string>
 </resources>
