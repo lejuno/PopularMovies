@@ -10,4 +10,23 @@
         <item>@string/pref_sort_rated_highest</item>
     </string-array>
 
+    <string-array name="pref_size_options">
+        <item>@string/pref_logosize_label_w45</item>
+        <item>@string/pref_logosize_label_w92</item>
+        <item>@string/pref_logosize_label_w154</item>
+        <item>@string/pref_logosize_label_w185</item>
+        <item>@string/pref_logosize_label_w300</item>
+        <item>@string/pref_logosize_label_w500</item>
+        <item>@string/pref_logosize_label_original</item>
+    </string-array>
+
+    <string-array name="pref_size_values">
+        <item>@string/pref_logosize_label_w45</item>
+        <item>@string/pref_logosize_label_w92</item>
+        <item>@string/pref_logosize_label_w154</item>
+        <item>@string/pref_logosize_label_w185</item>
+        <item>@string/pref_logosize_label_w300</item>
+        <item>@string/pref_logosize_label_w500</item>
+        <item>@string/pref_logosize_label_original</item>
+    </string-array>
 </resources>

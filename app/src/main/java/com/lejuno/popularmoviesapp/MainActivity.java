@@ -48,8 +48,10 @@ public class MainActivity extends AppCompatActivity {
         String unitType = sharedPrefs.getString(
                 getString(R.string.pref_sort_key),
                 getString(R.string.pref_sort_popular_most));
-
+        String apikey = sharedPrefs.getString(getString(R.string.pref_apikey_key), "error apikey");
+        String size = sharedPrefs.getString(getString(R.string.pref_size_key),getString(R.string.pref_logosize_label_w45));
         TextView text = (TextView) findViewById(R.id.hellostring);
-        text.setText(unitType);
+        text.setText(unitType + " " + " " + size + " " + apikey);
+
     }
 }

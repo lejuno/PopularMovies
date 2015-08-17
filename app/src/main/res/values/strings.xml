@@ -1,10 +1,7 @@
 <resources>
     <string name="app_name">Popular Movies</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
-
 
     <string name="title_activity_settings">Settings</string>
     <!-- Label for the sort preference [CHAR LIMIT=30] -->
@@ -19,4 +16,31 @@
     <string name="pref_sort_popular_most" translatable="false">popularmost</string>
     <!-- Value in SharedPreferences for highest rated sorting option [CHAR LIMIT=NONE] -->
     <string name="pref_sort_rated_highest" translatable="false">ratedhighest</string>
+
+    <!-- Not an actual preferences, but one method to store API KEY during tests -->
+    <!-- Label for API KEY -->
+    <string name="pref_apikey_label">Movie Api Key</string>
+    <!-- Key name for storing API KEY in SharedPreferences [CHAR LIMIT=NONE] -->
+    <string name="pref_apikey_key" translatable="false">apikey</string>
+    <!-- Default value for API KEY preference [CHAR LIMIT=NONE] -->
+    <string name="pref_apikey_default" translatable="false">bba8f78c09db5cdd1cbc2571934905a9</string>
+
+    <string name="pref_size_label">Image Size</string>
+    <string name="pref_size_key" translatable="false">imagesize</string>
+    <!-- Do not apply special characters in preference settings labels -->
+    <string name="pref_logosize_label_w45">Smallest</string>
+    <string name="pref_logosize_label_w92">Small</string>
+    <string name="pref_logosize_label_w154">Medium-low</string>
+    <string name="pref_logosize_label_w185">Medium-high</string>
+    <string name="pref_logosize_label_w300">Large</string>
+    <string name="pref_logosize_label_w500">Largest</string>
+    <string name="pref_logosize_label_original">Original Size</string>
+    <string name="pref_logosize_w54" translatable="false">W54</string>
+    <string name="pref_logosize_w92" translatable="false">W92</string>
+    <string name="pref_logosize_w154" translatable="false">W154</string>
+    <string name="pref_logosize_w185" translatable="false">W185</string>
+    <string name="pref_logosize_w300" translatable="false">W300</string>
+    <string name="pref_logosize_w500" translatable="false">W500</string>
+    <string name="pref_logosize_original" translatable="false">Original</string>
+
 </resources>

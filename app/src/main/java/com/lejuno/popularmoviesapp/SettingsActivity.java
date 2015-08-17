@@ -5,6 +5,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 
 /**
@@ -30,7 +31,9 @@ public class SettingsActivity extends PreferenceActivity
         // For all preferences, attach an OnPreferenceChangeListener so the UI summary can be
         // updated when the preference changes.
         // TODO: Add preferences
+        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_apikey_key)));
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_sort_key)));
+        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_size_key)));
     }
 
     /**
@@ -54,6 +57,7 @@ public class SettingsActivity extends PreferenceActivity
         String stringValue = value.toString();
 
         if (preference instanceof ListPreference) {
+            Log.v("LEJUNO", "onPreferenceChange " + stringValue);
             // For list preferences, look up the correct display value in
             // the preference's 'entries' list (since they have separate labels/values).
             ListPreference listPreference = (ListPreference) preference;
