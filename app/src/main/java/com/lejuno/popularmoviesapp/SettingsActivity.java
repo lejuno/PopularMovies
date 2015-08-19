@@ -33,7 +33,7 @@ public class SettingsActivity extends PreferenceActivity
         // TODO: Add preferences
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_apikey_key)));
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_sort_key)));
-        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_size_key)));
+        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_logosize_key)));
     }
 
     /**

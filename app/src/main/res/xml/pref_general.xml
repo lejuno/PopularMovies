@@ -14,9 +14,9 @@
         android:entries="@array/pref_sort_options" />
 
     <ListPreference
-        android:title="@string/pref_size_label"
-        android:key="@string/pref_size_key"
-        android:defaultValue="@string/pref_logosize_label_w45"
+        android:title="@string/pref_logosize_label"
+        android:key="@string/pref_logosize_key"
+        android:defaultValue="@string/pref_logosize_default"
         android:entryValues="@array/pref_size_values"
         android:entries="@array/pref_size_options" />
 </PreferenceScreen>

@@ -13,9 +13,9 @@
     <!-- Key name for sorting method preference in SharedPreferences [CHAR LIMIT=NONE] -->
     <string name="pref_sort_key" translatable="false">sortPreference</string>
     <!-- Value in SharedPreferences for most popular sorting option [CHAR LIMIT=NONE] -->
-    <string name="pref_sort_popular_most" translatable="false">popularmost</string>
+    <string name="pref_sort_popular_most" translatable="false">popularity.desc</string>
     <!-- Value in SharedPreferences for highest rated sorting option [CHAR LIMIT=NONE] -->
-    <string name="pref_sort_rated_highest" translatable="false">ratedhighest</string>
+    <string name="pref_sort_rated_highest" translatable="false">vote_average.desc</string>
 
     <!-- Not an actual preferences, but one method to store API KEY during tests -->
     <!-- Label for API KEY -->
@@ -25,8 +25,8 @@
     <!-- Default value for API KEY preference [CHAR LIMIT=NONE] -->
     <string name="pref_apikey_default" translatable="false">bba8f78c09db5cdd1cbc2571934905a9</string>
 
-    <string name="pref_size_label">Image Size</string>
-    <string name="pref_size_key" translatable="false">imagesize</string>
+    <string name="pref_logosize_label">Image Size</string>
+    <string name="pref_logosize_key" translatable="false">imagesize</string>
     <!-- Do not apply special characters in preference settings labels -->
     <string name="pref_logosize_label_w45">Smallest</string>
     <string name="pref_logosize_label_w92">Small</string>
@@ -34,6 +34,7 @@
     <string name="pref_logosize_label_w185">Medium-high</string>
     <string name="pref_logosize_label_w300">Large</string>
     <string name="pref_logosize_label_w500">Largest</string>
+    <string name="pref_logosize_default">@string/pref_logosize_label_w185</string>
     <string name="pref_logosize_label_original">Original Size</string>
     <string name="pref_logosize_w54" translatable="false">W54</string>
     <string name="pref_logosize_w92" translatable="false">W92</string>
@@ -42,5 +43,13 @@
     <string name="pref_logosize_w300" translatable="false">W300</string>
     <string name="pref_logosize_w500" translatable="false">W500</string>
     <string name="pref_logosize_original" translatable="false">Original</string>
+    <string name="title_activity_details">DetailsActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="geturl" translatable="false">http://api.themoviedb.org/3/discover/movie?sort_by=</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
