@@ -13,14 +13,6 @@ import android.widget.TextView;
  * Created by nomoto on 8/18/15.
  */
 public class MoviesListAdapter extends CursorAdapter {
-
-    private static final int VIEW_TYPE_COUNT = 2;
-    private static final int VIEW_TYPE_TODAY = 0;
-    private static final int VIEW_TYPE_FUTURE_DAY = 1;
-
-    // Flag to determine if we want to use a separate view for "today".
-    private boolean mUseTodayLayout = true;
-
     /**
      * Cache of the children views for a forecast list item.
      */
@@ -54,6 +46,7 @@ public class MoviesListAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
 
         ViewHolder viewHolder = (ViewHolder) view.getTag();
+        // NOMOTO CHECK LATER
 //        viewHolder.logoView.setImageResource(Utility.getIconResourceForWeatherCondition(
 //                cursor.getInt(MoviestListFragment.COL_WEATHER_CONDITION_ID)));
 
@@ -63,12 +56,8 @@ public class MoviesListAdapter extends CursorAdapter {
         viewHolder.textView1.setText(text1);
 
         // Read weather forecast from cursor
-        String text2 = cursor.getString(MoviesListFragment.COL_MOVIE_DESCRIPTION);
+        String text2 = cursor.getString(MoviesListFragment.COL_MOVIE_SYNOPSIS);
         // Find TextView and set weather forecast on it
         viewHolder.textView1.setText(text2);
-    }
-
-    public void setUseTodayLayout(boolean useTodayLayout) {
-        mUseTodayLayout = useTodayLayout;
     }
 }
