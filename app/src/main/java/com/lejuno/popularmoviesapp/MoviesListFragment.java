@@ -1,28 +1,20 @@
 package com.lejuno.popularmoviesapp;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.lejuno.popularmoviesapp.data.MoviesContract;
+import com.lejuno.popularmoviesapp.data.MoviesContract.MoviesEntry;
 
 
 /**
@@ -33,7 +25,7 @@ import java.util.List;
  * Use the {@link MoviesListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MoviesListFragment extends Fragment {
+public class MoviesListFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>  {
 
     private static final String LOG_TAG = MoviesListFragment.class.getSimpleName();
 
@@ -54,15 +46,15 @@ public class MoviesListFragment extends Fragment {
             // using the location set by the user, which is only in the Location table.
             // So the convenience is worth it.
             MoviesContract.MoviesEntry.TABLE_NAME + "." + MoviesContract.MoviesEntry._ID,
-            MoviesContract.MoviesEntry.COLUMN_ID,
-            MoviesContract.MoviesEntry.COLUMN_TITLE,
-            MoviesContract.MoviesEntry.COLUMN_RELEASE,
-            MoviesContract.MoviesEntry.COLUMN_SYNOPSIS,
-            MoviesContract.MoviesEntry.COLUMN_VOTE_AVERAGE,
-            MoviesContract.MoviesEntry.COLUMN_POSTER_URL,
-            MoviesContract.MoviesEntry.COLUMN_POPULARITY,
-            MoviesContract.MoviesEntry.COLUMN_VOTE_COUNT,
-            MoviesContract.MoviesEntry.COLUMN_INCOMING_POSITION
+            MoviesEntry.COLUMN_MOVIES_ONLINE_ID,
+            MoviesContract.MoviesEntry.COLUMN_MOVIES_TITLE,
+            MoviesContract.MoviesEntry.COLUMN_MOVIES_RELEASE,
+            MoviesContract.MoviesEntry.COLUMN_MOVIES_SYNOPSIS,
+            MoviesContract.MoviesEntry.COLUMN_MOVIES_VOTE_AVERAGE,
+            MoviesContract.MoviesEntry.COLUMN_MOVIES_POSTER_URL,
+            MoviesContract.MoviesEntry.COLUMN_MOVIES_POPULARITY,
+            MoviesContract.MoviesEntry.COLUMN_MOVIES_VOTE_COUNT,
+            MoviesContract.MoviesEntry.COLUMN_MOVIES_INCOMING_POSITION
     };
 
 
@@ -137,10 +129,13 @@ public class MoviesListFragment extends Fragment {
                 // if it cannot seek to that position.
                 Cursor cursor = (Cursor) adapterView.getItemAtPosition(position);
                 if (cursor != null) {
+   //                 ((Callback) getActivity())
+   //                         .onItemSelected(MoviesContract.WeatherEntry.buildWeatherLocationWithDate(
+   //                                 cursor.getLong(COL_WEATHER_DATE)
+   //                         ));
                     ((Callback) getActivity())
-                            .onItemSelected(MoviesContract.WeatherEntry.buildWeatherLocationWithDate(
-                                    cursor.getLong(COL_WEATHER_DATE)
-                            ));
+                            .onItemSelected(MoviesEntry.buildMoviesUri(cursor.getLong(COL_MOVIE_ID))
+                            );
                 }
                 mPosition = position;
             }
@@ -173,7 +168,7 @@ public class MoviesListFragment extends Fragment {
     }
 
     private void updateMovies() {
-        MoviesSyncAdapter.syncImmediately(getActivity());
+        //MoviesSyncAdapter.syncImmediately(getActivity());
     }
 
     @Override
@@ -198,10 +193,9 @@ public class MoviesListFragment extends Fragment {
         // Sort order:  Ascending, by date.
         // NOMOTO - NEED TO CHECK
         // MAY NEED TO INPUT AN ORDER IN DATA BASE
-        String sortOrder = MoviestContract.MoviestEntry.INCOMING_ORDER + " ASC";
+        String sortOrder = MoviesEntry.COLUMN_MOVIES_INCOMING_POSITION + " ASC";
 
-        Uri moviesListUri = MoviesContract.WeatherEntry.buildWeatherLocationWithStartDate(
-                locationSetting, System.currentTimeMillis());
+        Uri moviesListUri = MoviesContract.MoviesEntry.buildMoviesUri(COL_MOVIE_ID);
 
         return new CursorLoader(getActivity(),
                 moviesListUri,
